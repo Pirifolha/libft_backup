@@ -6,7 +6,7 @@
 /*   By: misousa <misousa@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/26 11:06:02 by misousa           #+#    #+#             */
-/*   Updated: 2025/10/27 15:25:08 by misousa          ###   ########.fr       */
+/*   Updated: 2025/10/27 19:55:53 by misousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,6 @@
 int		ft_atoi(char *str);
 void	*ft_memset(void *ptr, int i, unsigned int n);
 char	*ft_strtrim(char const *s1, char *set);
-
+size_t	ft_strlen(const char *s);
 
 #endif

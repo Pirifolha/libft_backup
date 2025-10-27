@@ -6,7 +6,7 @@
 /*   By: misousa <misousa@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 15:29:00 by misousa           #+#    #+#             */
-/*   Updated: 2025/10/27 19:43:27 by misousa          ###   ########.fr       */
+/*   Updated: 2025/10/27 19:59:37 by misousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ char	*ft_itoa(int n)
 	long	nb;
 
 	nb = n;
-	result = malloc(checksize(n));
+	result = malloc(checksize(n) + 1);
 	if (result == 0)
 		return (0);
 	writenbr(result, nb);
