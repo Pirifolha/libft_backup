@@ -1,0 +1,42 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: misousa <misousa@student.42lisboa.com>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/10/21 18:21:32 by misousa           #+#    #+#             */
+/*   Updated: 2025/10/26 10:44:46 by misousa          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
+void	*ft_memcpy(void *dest, const void *src, unsigned int size)
+{
+	unsigned int	i;
+	char			*cdest;
+	const char		*csrc;
+
+	i = 0;
+	cdest = dest;
+	csrc = src;
+	while (i < size)
+	{
+		cdest[i] = csrc[i];
+		i++;
+	}
+	return (dest);
+}
+/* int	main(void)
+{
+	int a = 20;
+	int b = 10;
+
+	printf("Value of b before calling memcpy: %d\n", b);
+	ft_memcpy(&b, &a, sizeof(int));
+
+	printf("Value of b after calling memcpy: %d\n", b);
+
+	return 0;
+} */
