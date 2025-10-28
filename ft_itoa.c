@@ -6,7 +6,7 @@
 /*   By: misousa <misousa@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 15:29:00 by misousa           #+#    #+#             */
-/*   Updated: 2025/10/28 11:55:07 by misousa          ###   ########.fr       */
+/*   Updated: 2025/10/28 14:35:33 by misousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,11 +69,11 @@ char	*ft_itoa(int n)
 	return (result);
 }
 
-int	main(void)
+/* int	main(void)
 {
 	char *result;
 
 	result = ft_itoa(INT_MIN);
 
 	printf("%s\n", result);
-}
+} */
