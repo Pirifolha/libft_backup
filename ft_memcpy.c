@@ -6,7 +6,7 @@
 /*   By: misousa <misousa@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 18:21:32 by misousa           #+#    #+#             */
-/*   Updated: 2025/10/28 13:26:58 by misousa          ###   ########.fr       */
+/*   Updated: 2025/10/28 15:51:29 by misousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	size_t	i;
-	char			*cdest;
-	const char		*csrc;
+	size_t		i;
+	char		*cdest;
+	const char	*csrc;
 
 	i = 0;
 	cdest = dest;
@@ -43,5 +43,5 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	printf("Value of b after calling ft_memcpy: %d\n", b);
 	printf("Value of b before calling memcpy: %d\n", d);
 
-	return 0;
+	return (0);
 } */

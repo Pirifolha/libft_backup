@@ -6,7 +6,7 @@
 /*   By: misousa <misousa@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/23 14:53:45 by miguelsousa       #+#    #+#             */
-/*   Updated: 2025/10/28 13:05:50 by misousa          ###   ########.fr       */
+/*   Updated: 2025/10/28 15:53:20 by misousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strchr(const char *s, int c)
 			return (0);
 		s++;
 	}
-	return ((char*)s);
+	return ((char *)s);
 }
 
 /* int    main(void)

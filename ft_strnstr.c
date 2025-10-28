@@ -6,7 +6,7 @@
 /*   By: misousa <misousa@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/23 20:43:08 by miguelsousa       #+#    #+#             */
-/*   Updated: 2025/10/28 13:44:14 by misousa          ###   ########.fr       */
+/*   Updated: 2025/10/28 15:51:03 by misousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strnstr(const char *big, char *little, size_t len)
 
 	i = 0;
 	if (little[0] == '\0')
-		return ((char*)big);
+		return ((char *)big);
 	while (i < len)
 	{
 		j = 0;
@@ -28,17 +28,20 @@ char	*ft_strnstr(const char *big, char *little, size_t len)
 			j++;
 		}
 		if (little[j] == '\0')
-			return ((char*)&big[i]);
+			return ((char *)&big[i]);
 		i++;
 	}
 	return (0);
 }
 
-int	main(void)
+/* int	main(void)
 {
-	char *str1 = "abcsadefdsf";
-	char *str2 = "adef";
+	char	*str1;
+	char	*str2;
 
+	str1 = "abcsadefdsf";
+	str2 = "adef";
 	printf("%s\n", ft_strnstr(str1, str2, 5));
-	/* printf("%s\n", strnstr(str1, str2, 7)); */
+	/* printf("%s\n", strnstr(str1, str2, 7));
 }
+	*/

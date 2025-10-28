@@ -6,7 +6,7 @@
 /*   By: misousa <misousa@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 16:09:31 by misousa           #+#    #+#             */
-/*   Updated: 2025/10/28 12:00:48 by misousa          ###   ########.fr       */
+/*   Updated: 2025/10/28 15:53:15 by misousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ int	ft_isalnum(int c)
 		return (0);
 }
 
-int	main(void)
+/* int	main(void)
 {
 	int c = '-';
 
 	printf("%i\n", ft_isalnum(c));
 	return (0);
-}
+} */
