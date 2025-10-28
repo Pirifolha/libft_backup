@@ -6,21 +6,23 @@
 /*   By: misousa <misousa@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 17:59:45 by misousa           #+#    #+#             */
-/*   Updated: 2025/10/26 07:56:48 by misousa          ###   ########.fr       */
+/*   Updated: 2025/10/28 13:32:23 by misousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_bzero(void *ptr, unsigned int n)
+#include "libft.h"
+
+void	ft_bzero(void *s, size_t n)
 {
-	unsigned int	count;
+	size_t	count;
 	char			*nptr;
 
 	count = 0;
 	while (count < n)
 	{
-		nptr = ptr;
+		nptr = s;
 		*nptr = '\0';
-		ptr++;
+		s++;
 		count++;
 	}
 }

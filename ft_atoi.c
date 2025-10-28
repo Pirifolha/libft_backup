@@ -6,7 +6,7 @@
 /*   By: misousa <misousa@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 14:55:03 by misousa           #+#    #+#             */
-/*   Updated: 2025/10/27 17:16:02 by misousa          ###   ########.fr       */
+/*   Updated: 2025/10/28 13:32:41 by misousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 
-int	ft_atoi(char *str)
+int	ft_atoi(const char *nptr)
 {
 	int	i;
 	int	res;
@@ -23,19 +23,19 @@ int	ft_atoi(char *str)
 	i = 0;
 	res = 0;
 	sign = 1;
-	while (str[i] == ' ' || (str[i] > 8 && str[i] < 14))
+	while (nptr[i] == ' ' || (nptr[i] > 8 && nptr[i] < 14))
 	{
 		i++;
 	}
-	if (str[i] == '-' || str[i] == '+')
+	if (nptr[i] == '-' || nptr[i] == '+')
 	{
-		if (str[i] == '-')
+		if (nptr[i] == '-')
 			sign = -sign;
 		i++;
 	}
-	while (str[i] >= '0' && str[i] <= '9')
+	while (nptr[i] >= '0' && nptr[i] <= '9')
 	{
-		res = res * 10 + (str[i] - '0');
+		res = res * 10 + (nptr[i] - '0');
 		i++;
 	}
 	return (res * sign);

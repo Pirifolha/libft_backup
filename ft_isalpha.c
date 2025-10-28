@@ -6,11 +6,13 @@
 /*   By: misousa <misousa@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 15:11:55 by misousa           #+#    #+#             */
-/*   Updated: 2025/10/24 15:59:12 by misousa          ###   ########.fr       */
+/*   Updated: 2025/10/28 12:01:48 by misousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(char c)
+#include "libft.h"
+
+int	ft_isalpha(int c)
 {
 	if (c < 'A' || (c > 'Z' && c < 'a') || c > 'z')
 		return (0);
@@ -20,9 +22,9 @@ int	ft_isalpha(char c)
 
 /* int main ()
 {
-	char c;
+	int c;
 
-	c = 'D';
+	c = '3';
 
 	printf("%i\n", 	ft_isalpha(c));
 	return (0);

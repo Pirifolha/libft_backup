@@ -6,26 +6,15 @@
 /*   By: misousa <misousa@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/26 11:46:07 by misousa           #+#    #+#             */
-/*   Updated: 2025/10/26 11:53:49 by misousa          ###   ########.fr       */
+/*   Updated: 2025/10/28 13:21:10 by misousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
 
-int	ft_strlen(char *str)
-{
-	int	i;
+size_t		ft_strlen(const char *s);
 
-	i = 0;
-	while (str[i] != '\0')
-	{
-		i++;
-	}
-	return (i);
-}
-
-char	*ft_strcpy(char *dest, char *src)
+static char	*ft_strcpy(char *dest, char *src)
 {
 	int	i;
 
@@ -39,20 +28,19 @@ char	*ft_strcpy(char *dest, char *src)
 	return (dest);
 }
 
-char	*ft_strdup(char *src)
+char	*ft_strdup(char *s)
 {
 	char	*dest;
 
-	dest = malloc(ft_strlen(src) + 1);
+	dest = malloc(ft_strlen(s) + 1);
 	if (dest == 0)
 		return (0);
-	ft_strcpy(dest, src);
+	ft_strcpy(dest, s);
 	return (dest);
 }
 
-/* int main ()
+/* int	main(void)
 {
-
 	char *src = "saddsadsadsa";
 
 	char *dest;

@@ -6,32 +6,31 @@
 /*   By: misousa <misousa@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/23 14:53:45 by miguelsousa       #+#    #+#             */
-/*   Updated: 2025/10/26 07:56:35 by misousa          ###   ########.fr       */
+/*   Updated: 2025/10/28 13:05:50 by misousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* #include <stdio.h>
-#include <strings.h> */
+#include "libft.h"
 
-const char	*ft_strchr(const char *str, int ch)
+char	*ft_strchr(const char *s, int c)
 {
-	char	c;
+	char	ch;
 
-	c = ch;
-	while (*str != c)
+	ch = c;
+	while (*s != ch)
 	{
-		if (*str == '\0')
-			return ("(null)");
-		str++;
+		if (*s == '\0')
+			return (0);
+		s++;
 	}
-	return (str);
+	return ((char*)s);
 }
 
 /* int    main(void)
 {
 	char *str = "abcdfg";
 
-	char ch = 'e';
+	char ch = 'b';
 
 	printf("%s\n", ft_strchr(str, ch));
 } */

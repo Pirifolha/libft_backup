@@ -6,11 +6,13 @@
 /*   By: misousa <misousa@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 16:04:18 by misousa           #+#    #+#             */
-/*   Updated: 2025/10/24 15:59:08 by misousa          ###   ########.fr       */
+/*   Updated: 2025/10/28 12:05:37 by misousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(char c)
+#include "libft.h"
+
+int	ft_isdigit(int c)
 {
 	if (c < '0' || c > '9')
 		return (0);

@@ -6,38 +6,39 @@
 /*   By: misousa <misousa@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/23 20:43:08 by miguelsousa       #+#    #+#             */
-/*   Updated: 2025/10/26 07:56:42 by misousa          ###   ########.fr       */
+/*   Updated: 2025/10/28 13:44:14 by misousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
-char	*ft_strnstr(char *str, char *to_find, unsigned int n)
+char	*ft_strnstr(const char *big, char *little, size_t len)
 {
-	unsigned int	i;
-	unsigned int	j;
+	size_t	i;
+	size_t	j;
 
 	i = 0;
-	if (to_find[0] == '\0')
-		return (str);
-	while (i < n)
+	if (little[0] == '\0')
+		return ((char*)big);
+	while (i < len)
 	{
 		j = 0;
-		while (str[i + j] == to_find[j] && to_find[j] != '\0')
+		while (big[i + j] == little[j] && little[j] != '\0')
 		{
 			j++;
 		}
-		if (to_find[j] == '\0')
-			return (&str[i]);
+		if (little[j] == '\0')
+			return ((char*)&big[i]);
 		i++;
 	}
 	return (0);
 }
 
-/* int	main(void)
+int	main(void)
 {
 	char *str1 = "abcsadefdsf";
 	char *str2 = "adef";
 
-	printf("%s\n", ft_strnstr(str1, str2, 7));
-} */
+	printf("%s\n", ft_strnstr(str1, str2, 5));
+	/* printf("%s\n", strnstr(str1, str2, 7)); */
+}

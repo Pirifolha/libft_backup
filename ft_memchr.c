@@ -6,35 +6,37 @@
 /*   By: misousa <misousa@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/23 17:45:24 by miguelsousa       #+#    #+#             */
-/*   Updated: 2025/10/24 15:59:03 by misousa          ###   ########.fr       */
+/*   Updated: 2025/10/28 13:30:30 by misousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* #include <stdio.h>
-#include <strings.h>*/
+#include "libft.h"
 
-void	*ft_memchr(void *to, int value, unsigned int size)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	char			*cto;
-	char			c;
-	unsigned int	count;
+	const unsigned char	*cto;
+	unsigned char		ch;
+	size_t				count;
 
-	c = value;
-	cto = to;
+	ch = (unsigned char)c;
+	cto = (const unsigned char *)s;
 	count = 0;
-	while (*cto != c && count < size)
+	while (count < n)
 	{
+		if (*cto == ch)
+		{
+			return ((void *)cto);
+		}
 		cto++;
-		to++;
 		count++;
 	}
-	return (to);
+	return (0);
 }
 
-/* int main ()
+/* int	main(void)
 {
-	char *str = "adsdasovvk";
-	char c = 's';
+	char *str = "odsdasovvk";
+	char c = 'o';
 	int s = 20;
 
 	char *res = ft_memchr(str, c, s);

@@ -6,11 +6,13 @@
 /*   By: misousa <misousa@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 16:09:31 by misousa           #+#    #+#             */
-/*   Updated: 2025/10/24 15:59:14 by misousa          ###   ########.fr       */
+/*   Updated: 2025/10/28 12:00:48 by misousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalnum(char c)
+#include "libft.h"
+
+int	ft_isalnum(int c)
 {
 	if ((c >= '0' && c <= '9') || (c >= 'A' && c <= 'Z') || (c >= 'a'
 			&& c <= 'z'))
@@ -19,10 +21,10 @@ int	ft_isalnum(char c)
 		return (0);
 }
 
-/* int	main(void)
+int	main(void)
 {
-	char c = 'T';
+	int c = '-';
 
 	printf("%i\n", ft_isalnum(c));
 	return (0);
-} */
+}

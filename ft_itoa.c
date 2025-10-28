@@ -6,13 +6,11 @@
 /*   By: misousa <misousa@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 15:29:00 by misousa           #+#    #+#             */
-/*   Updated: 2025/10/27 19:59:37 by misousa          ###   ########.fr       */
+/*   Updated: 2025/10/28 11:55:07 by misousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <limits.h>
-#include <stdio.h>
-#include <stdlib.h>
+#include "libft.h"
 
 static int	checksize(long nb)
 {
@@ -45,7 +43,8 @@ static char	*writenbr(char *result, long nb)
 	}
 	if (nb > 10)
 	{
-		i = (checksize(nb) - 1 + i);
+		i = (checksize(nb) + i);
+		result[i--] = '\0';
 		while (nb > 10)
 		{
 			result[i] = (nb % 10) + 48;
@@ -74,7 +73,7 @@ int	main(void)
 {
 	char *result;
 
-	result = ft_itoa(0);
+	result = ft_itoa(INT_MIN);
 
 	printf("%s\n", result);
 }

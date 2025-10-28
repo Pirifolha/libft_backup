@@ -6,28 +6,28 @@
 /*   By: misousa <misousa@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 23:30:01 by miguelsousa       #+#    #+#             */
-/*   Updated: 2025/10/26 11:05:42 by misousa          ###   ########.fr       */
+/*   Updated: 2025/10/28 13:22:39 by misousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <string.h>
 
-void	*ft_memmove(void *to, const void *from, unsigned int n)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	char		*cto;
-	const char	*cfrom;
+	char		*to;
+	const char	*from;
 
-	cto = to + n;
-	cfrom = from + n;
+	to = dest + n;
+	from = src + n;
 	while (n > 0)
 	{
-		cto--;
-		cfrom--;
-		*cto = *cfrom;
+		to--;
+		from--;
+		*to = *from;
 		n--;
 	}
-	return (to);
+	return (dest);
 }
 
 /* int	main(void)
@@ -38,7 +38,6 @@ void	*ft_memmove(void *to, const void *from, unsigned int n)
 	second = str;
 	printf("Original string :%s\n ", str);
 
-	// when overlap it start from first position
 	ft_memmove(second + 8, first, 10);
 	//memmove(second + 8, first, 10);
 	printf("memmove overlap : %s\n ", str);

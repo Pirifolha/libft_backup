@@ -6,7 +6,7 @@
 /*   By: misousa <misousa@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 17:54:19 by misousa           #+#    #+#             */
-/*   Updated: 2025/10/27 19:28:07 by misousa          ###   ########.fr       */
+/*   Updated: 2025/10/28 13:52:07 by misousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ int	count_words(char *s, char c)
 	int	words;
 
 	i = 0;
-	words = ;
 	while (s[i] != '\0')
 	{
 		if (s[i] == c)

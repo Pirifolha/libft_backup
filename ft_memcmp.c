@@ -6,41 +6,38 @@
 /*   By: misousa <misousa@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/23 18:16:56 by miguelsousa       #+#    #+#             */
-/*   Updated: 2025/10/24 15:59:01 by misousa          ###   ########.fr       */
+/*   Updated: 2025/10/28 13:28:39 by misousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* #include <stdio.h>
-#include <strings.h> */
+#include "libft.h"
 
-int	ft_memcmp(void *str1, void *str2, unsigned int n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	char			*cstr1;
-	char			*cstr2;
-	unsigned int	i;
+	const char	*cstr1;
+	const char	*cstr2;
+	size_t		i;
 
-	cstr1 = str1;
-	cstr2 = str2;
+	cstr1 = s1;
+	cstr2 = s2;
 	i = 0;
 	while (i < n)
 	{
+		if (cstr1[i] > cstr2[i] || cstr1[i] < cstr2[i])
+			return (cstr1[i] - cstr2[i]);
 		i++;
-		cstr1++;
-		cstr2++;
-		if (*cstr1 > *cstr2)
-			return (*cstr1 - *cstr2);
-		if (*cstr1 < *cstr2)
-			return (*cstr2 - *cstr1);
 	}
 	return (0);
 }
 
 /* int	main(void)
 {
-	char str1[] = "12345678901400345678";
-	char str2[] = "1234567";
+	char str1[] = "412523";
+	char str2[] = "44523";
 
-	int result = ft_memcmp(str1, str2, 10);
+	int result = memcmp(str1, str2, 3);
+	int result2 = memcmp(str1, str2, 3);
 
-	printf("%i\n", result);
+	printf("ft_memcmp: %i\n", result);
+	printf("memcmp: %i\n", result2);
 } */
