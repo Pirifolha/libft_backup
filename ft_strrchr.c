@@ -6,7 +6,7 @@
 /*   By: misousa <misousa@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/23 15:32:14 by miguelsousa       #+#    #+#             */
-/*   Updated: 2025/10/28 13:45:57 by misousa          ###   ########.fr       */
+/*   Updated: 2025/10/30 18:31:39 by misousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ const char	*ft_strrchr(const char *s, int c)
 
 	i = 0;
 	ch = c;
+	if (!s)
+		return (NULL);
 	while (*s != '\0')
 	{
 		if (*s == ch)
@@ -34,11 +36,9 @@ const char	*ft_strrchr(const char *s, int c)
 	return (s);
 }
 
-/* int	main(void)
+int	main(void)
 {
-	char *str = "addcdfakkasdoadsnvdkjsvdnssdifsodjfidfjsfddjsg";
+	char *str = "addcdfakkasdoaedsnvdkjsvdnssdifsodjfidefjs\0fdejsg";
 
-	char ch = 'e';
-
-	printf("%s\n", ft_strrchr(str, ch));
-} */
+	printf("%li\n", ft_strrchr);
+}

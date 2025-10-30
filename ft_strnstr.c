@@ -6,7 +6,7 @@
 /*   By: misousa <misousa@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/23 20:43:08 by miguelsousa       #+#    #+#             */
-/*   Updated: 2025/10/28 15:51:03 by misousa          ###   ########.fr       */
+/*   Updated: 2025/10/30 18:39:07 by misousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,5 @@ char	*ft_strnstr(const char *big, char *little, size_t len)
 	str1 = "abcsadefdsf";
 	str2 = "adef";
 	printf("%s\n", ft_strnstr(str1, str2, 5));
-	/* printf("%s\n", strnstr(str1, str2, 7));
-}
-	*/
+	printf("%s\n", strnstr(str1, str2, 7));
+} */

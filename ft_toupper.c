@@ -1,36 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: misousa <misousa@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/21 18:21:32 by misousa           #+#    #+#             */
-/*   Updated: 2025/10/30 17:22:36 by misousa          ###   ########.fr       */
+/*   Created: 2025/10/23 00:38:12 by miguelsousa       #+#    #+#             */
+/*   Updated: 2025/10/30 14:53:05 by misousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+int	ft_toupper(int c)
 {
-	size_t		i;
-	char		*cdest;
-	const char	*csrc;
-
-	i = 0;
-	csrc = (char *)src;
-	cdest = (char *)dest;
-	if (!dest && !src)
-		return (0);
-	while (i < n)
+	if (c > 96 && c < 123)
 	{
-		cdest[i] = csrc[i];
-		i++;
+		c = c - 32;
+		return (c);
 	}
-	return (dest);
+	else
+		return (c);
 }
-/* int	main(void)
+
+/* int main ()
 {
-	ft_memcpy(((void *)0), ((void *)0), 3);
+	char a = 't';
+	char A = ft_toupper(a);
+
+	printf("%c\n", A);
 } */

@@ -6,15 +6,15 @@
 /*   By: misousa <misousa@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/23 13:42:07 by miguelsousa       #+#    #+#             */
-/*   Updated: 2025/10/24 15:58:37 by misousa          ###   ########.fr       */
+/*   Updated: 2025/10/30 14:56:38 by misousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* #include <stdio.h> */
+#include "libft.h"
 
 int	ft_tolower(int c)
 {
-	if (c > 64 && c < 90)
+	if (c > 64 && c < 91)
 	{
 		c = c + 32;
 		return (c);
@@ -25,7 +25,7 @@ int	ft_tolower(int c)
 
 /* int main ()
 {
-	char a = 'o';
+	char a = 'Z';
 	char A = ft_tolower(a);
 
 	printf("%c\n", A);

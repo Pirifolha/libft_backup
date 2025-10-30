@@ -6,7 +6,7 @@
 /*   By: misousa <misousa@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 16:37:07 by misousa           #+#    #+#             */
-/*   Updated: 2025/10/28 15:51:18 by misousa          ###   ########.fr       */
+/*   Updated: 2025/10/30 18:15:14 by misousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,27 +15,28 @@
 void	*ft_memset(void *s, int c, size_t n)
 {
 	size_t	count;
-	char	*nptr;
+	unsigned char	*nptr;
 
 	count = 0;
+	nptr = s;
+	*nptr = c;
 	while (count < n)
 	{
-		nptr = s;
-		*nptr = c;
 		s++;
 		count++;
 	}
-	return (0);
+	return ((void *)s);
 }
 
 /* int main()
 {
 	char str[10] = "ABCDEFGHI";
+	char *res;
 	printf("\nBefore memset(): %s\n", str);
 
 	// Fill 8 characters starting from str[13] with '.'
-	ft_memset(str + 3, 'L', 4*sizeof(char));
+	res = ft_memset("", 'A', 0);
 
-	printf("After memset():  %s", str);
+	printf("After memset():  %s", res);
 	return (0);
 } */

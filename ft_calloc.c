@@ -6,27 +6,13 @@
 /*   By: misousa <misousa@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 15:58:12 by misousa           #+#    #+#             */
-/*   Updated: 2025/10/28 13:32:05 by misousa          ###   ########.fr       */
+/*   Updated: 2025/10/30 14:46:14 by misousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	*ft_memset(void *ptr, int i, unsigned int n)
-{
-	unsigned int	count;
-	char			*nptr;
-
-	count = 0;
-	while (count < n)
-	{
-		nptr = ptr;
-		*nptr = i;
-		ptr++;
-		count++;
-	}
-	return (0);
-}
+void	*ft_memset(void *s, int c, size_t n);
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
@@ -35,9 +21,13 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	if (size == 0 || nmemb == 0)
 	{
 		result = malloc(1);
+		if (result == 0)
+			return (0);
 		return (result);
 	}
 	result = malloc(nmemb * size);
+	if (result == 0)
+		return (0);
 	ft_memset(result, 0, (nmemb * size));
 	return (result);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miguelsousa <miguelsousa@student.42.fr>    +#+  +:+       +#+        */
+/*   By: misousa <misousa@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 17:54:19 by misousa           #+#    #+#             */
-/*   Updated: 2025/10/29 14:32:26 by miguelsousa      ###   ########.fr       */
+/*   Updated: 2025/10/30 16:17:46 by misousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ static int	*wordlen(const char *s, char c, int words)
 	i = 0;
 	count = 0;
 	result = malloc(words * sizeof(int));
+	if (result == 0)
+		return (0);
 	words = 0;
 	while (s[i] != '\0')
 	{
@@ -52,7 +54,8 @@ static int	*wordlen(const char *s, char c, int words)
 		}
 		i++;
 	}
-	result[words] = count;
+	if (s[--i] != c)
+		result[words] = count;
 	return (result);
 }
 
@@ -77,7 +80,7 @@ static char	**writestr(char **result, char const *s, char c, int *len)
 			j++;
 			k++;
 		}
-		result[i][++j] = '\0';
+		result[i][j] = '\0';
 		i++;
 	}
 	return (result);
@@ -94,9 +97,13 @@ char	**ft_split(char const *s, char c)
 	words = count_words(s, c);
 	len = wordlen(s, c, words);
 	result = malloc(words * sizeof(char *));
+	if (result == 0)
+		return (0);
 	while (i < words)
 	{
 		result[i] = malloc(len[i] + 1 * sizeof(char));
+		if (result == 0)
+			return (0);
 		i++;
 	}
 	result = writestr(result, s, c, len);
@@ -110,8 +117,8 @@ char	**ft_split(char const *s, char c)
 	char c;
 	int words;
 
-	s = "sdk-==as--ggdfvvfd-regerger--fdggfdfgd------asdd325as=--";
-	c = '-';
+	s = "\0aa\0bbb";
+	c = '\0';
 	words = count_words(s, c);
 	res = ft_split(s, c);
 

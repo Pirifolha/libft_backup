@@ -6,12 +6,11 @@
 /*   By: misousa <misousa@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 23:30:01 by miguelsousa       #+#    #+#             */
-/*   Updated: 2025/10/28 13:22:39 by misousa          ###   ########.fr       */
+/*   Updated: 2025/10/30 17:22:20 by misousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
@@ -20,6 +19,8 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 
 	to = dest + n;
 	from = src + n;
+	if (!dest && !src)
+		return (0);
 	while (n > 0)
 	{
 		to--;
@@ -32,19 +33,17 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 
 /* int	main(void)
 {
-	char str[20] = "Learningisfun";
-	char *first, *second;
-	first = str;
-	second = str;
-	printf("Original string :%s\n ", str);
+	char dst1[0xF0];
+	char dst2[0xF0];
+	char *data = "thiÃ Ã\xde\xad\xbe\xeftriÃ±g will be ÃžvÃ©rlapÃ©d !\r\n";
+	int size = 0xF0 - 0xF;
 
-	ft_memmove(second + 8, first, 10);
-	//memmove(second + 8, first, 10);
-	printf("memmove overlap : %s\n ", str);
-
-	char str2[] = "abcdef";
-	ft_memmove(str2 + 2, str2, 4);
-	printf("%s\n", str2);
+	memset(dst1, 'A', sizeof(dst1));
+	memset(dst2, 'A', sizeof(dst2));
+	memcpy(dst1, data, strlen(data));
+	memcpy(dst2, data, strlen(data));
+	memmove(dst1, dst1 + 3, size);
+	ft_memmove(dst2, dst2 + 3, size);
 
 	return (0);
 } */

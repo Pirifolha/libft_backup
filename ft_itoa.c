@@ -6,7 +6,7 @@
 /*   By: misousa <misousa@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 15:29:00 by misousa           #+#    #+#             */
-/*   Updated: 2025/10/28 14:35:33 by misousa          ###   ########.fr       */
+/*   Updated: 2025/10/30 18:09:50 by misousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static int	checksize(long nb)
 		nb = -nb;
 		i++;
 	}
-	while (nb > 10)
+	while (nb > 9)
 	{
 		nb = nb / 10;
 		i++;
@@ -41,11 +41,11 @@ static char	*writenbr(char *result, long nb)
 		nb = -nb;
 		i++;
 	}
-	if (nb > 10)
+	i = (checksize(nb) + i);
+	result[i--] = '\0';
+	if (nb > 9)
 	{
-		i = (checksize(nb) + i);
-		result[i--] = '\0';
-		while (nb > 10)
+		while (nb > 9)
 		{
 			result[i] = (nb % 10) + 48;
 			nb = nb / 10;
@@ -62,7 +62,7 @@ char	*ft_itoa(int n)
 	long	nb;
 
 	nb = n;
-	result = malloc(checksize(n) + 1);
+	result = malloc(checksize(n) * sizeof(char) + 1);
 	if (result == 0)
 		return (0);
 	writenbr(result, nb);
@@ -73,7 +73,7 @@ char	*ft_itoa(int n)
 {
 	char *result;
 
-	result = ft_itoa(INT_MIN);
+	result = ft_itoa(10);
 
 	printf("%s\n", result);
 } */

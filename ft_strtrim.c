@@ -6,7 +6,7 @@
 /*   By: misousa <misousa@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/26 14:02:30 by misousa           #+#    #+#             */
-/*   Updated: 2025/10/28 15:18:09 by misousa          ###   ########.fr       */
+/*   Updated: 2025/10/30 18:58:04 by misousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static int	checkset(char *set, char c)
 	i = 0;
 	while (set[i] != '\0')
 	{
-		if (c == set[i])
+		if (set[i] == c)
 			return (1);
 		i++;
 	}
@@ -34,13 +34,19 @@ char	*ft_strtrim(char const *s1, char *set)
 	int		end;
 
 	i = 0;
-	end = ft_strlen(s1);
+	if (!s1 || !set)
+		return (0);
+	end = 0;
 	while (checkset(set, s1[i]) == 1)
 		i++;
 	start = i;
-	while (checkset(set, s1[end - 1]) == 1)
+	while (s1[end])
+		end++;
+	while (end > start && checkset(set, s1[end - 1]) == 1)
 		end--;
-	result = malloc(end - start + 1);
+	result = malloc(sizeof(char *) * (end - start) + 1);
+	if (result == 0)
+		return (0);
 	i = 0;
 	while (start < end)
 		result[i++] = s1[start++];
@@ -54,8 +60,8 @@ char	*ft_strtrim(char const *s1, char *set)
 	char *set;
 	char *result;
 
-	s1 = "-|-|-|bcdede|fghijab|-";
-	set = "-|";
+	s1 = "  \t \t \n   \n\n\n\t";
+	set = " \n\t";
 	result = ft_strtrim(s1, set);
 
 	printf("%s\n", result);
