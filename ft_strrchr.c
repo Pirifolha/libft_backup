@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: misousa <misousa@student.42lisboa.com>     +#+  +:+       +#+        */
+/*   By: miguelsousa <miguelsousa@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/23 15:32:14 by miguelsousa       #+#    #+#             */
-/*   Updated: 2025/10/30 18:31:39 by misousa          ###   ########.fr       */
+/*   Updated: 2025/10/30 20:05:27 by miguelsousa      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,31 +14,27 @@
 
 const char	*ft_strrchr(const char *s, int c)
 {
-	char	ch;
-	int		i;
+	int	i;
 
-	i = 0;
-	ch = c;
 	if (!s)
 		return (NULL);
-	while (*s != '\0')
+	i = ft_strlen(s);
+	while (s[i] != c)
 	{
-		if (*s == ch)
-			i++;
-		s++;
+		i--;
 	}
 	if (i == 0)
 		return (0);
-	while (*s != ch)
-	{
-		s--;
-	}
-	return (s);
+	return (s + i);
 }
 
 int	main(void)
 {
-	char *str = "addcdfakkasdoaedsnvdkjsvdnssdifsodjfidefjs\0fdejsg";
+	char *str = "addcdfakka\0sdoaedsnvdk\0jsvdnssdifsodjfidefjs\0fdejsg";
+	int c = 'k';
+	const char *res = ft_strrchr(str, c);
+	const char *res2 = strrchr(str, c);
 
-	printf("%li\n", ft_strrchr);
+	printf("%s\n", res);
+	printf("%s\n", res2);
 }
