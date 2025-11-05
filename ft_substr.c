@@ -6,7 +6,7 @@
 /*   By: misousa <misousa@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/26 12:13:02 by misousa           #+#    #+#             */
-/*   Updated: 2025/10/26 13:19:42 by misousa          ###   ########.fr       */
+/*   Updated: 2025/11/05 18:20:46 by misousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,16 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*result;
 
 	i = 0;
-	if (s[start] == '\0')
+	if (!s)
 		return (0);
+	if (start >= ft_strlen(s))
+	{
+		result = malloc(1);
+		if (result == 0)
+			return (0);
+		result[start] = '\0';
+		return (result);
+	}
 	result = malloc(len + 1);
 	if (result == 0)
 		return (0);
@@ -39,9 +47,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char *result;
 	int i;
 
-	s = " sdadsa";
-	i = 1;
-	result = ft_substr(s, i, 3);
+	s = "01234";
+	i = 10;
+	result = ft_substr(s, i, 10);
 
 	printf("This is the sub string: %s\n", result);
 	free(result);

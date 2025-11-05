@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miguelsousa <miguelsousa@student.42.fr>    +#+  +:+       +#+        */
+/*   By: misousa <misousa@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 17:18:51 by miguelsousa       #+#    #+#             */
-/*   Updated: 2025/11/04 17:22:58 by miguelsousa      ###   ########.fr       */
+/*   Updated: 2025/11/05 17:31:52 by misousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ void ft_putendl_fd(char *s, int fd)
     write(fd, "\n", 1);
 }
 
-int main ()
+/* int main ()
 {
 
 	ft_putendl_fd("asdasdasd", 1);
-}
+} */

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miguelsousa <miguelsousa@student.42.fr>    +#+  +:+       +#+        */
+/*   By: misousa <misousa@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 17:24:20 by miguelsousa       #+#    #+#             */
-/*   Updated: 2025/11/04 17:27:24 by miguelsousa      ###   ########.fr       */
+/*   Updated: 2025/11/05 17:44:26 by misousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ft_putnbr_fd(int nb, int fd)
 	}
 	if (nb < 0)
 	{
-		write(1, "-", 1);
+		write(fd, "-", 1);
 		nb = -nb;
 	}
 	if (nb > 9)
@@ -38,5 +38,5 @@ void	ft_putnbr_fd(int nb, int fd)
 
 /* int	main(void)
 {
-	ft_putnbr_fd(INT_MIN, 1);
+	ft_putnbr_fd(-5, 1);
 } */

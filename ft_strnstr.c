@@ -6,7 +6,7 @@
 /*   By: misousa <misousa@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/23 20:43:08 by miguelsousa       #+#    #+#             */
-/*   Updated: 2025/10/30 18:39:07 by misousa          ###   ########.fr       */
+/*   Updated: 2025/11/05 16:26:29 by misousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ char	*ft_strnstr(const char *big, char *little, size_t len)
 	i = 0;
 	if (little[0] == '\0')
 		return ((char *)big);
-	while (i < len)
+	while (i < len && big[i] != '\0')
 	{
 		j = 0;
-		while (big[i + j] == little[j] && little[j] != '\0')
+		while (i + j < len && big[i + j] == little[j] && little[j] != '\0')
 		{
 			j++;
 		}
@@ -39,8 +39,8 @@ char	*ft_strnstr(const char *big, char *little, size_t len)
 	char	*str1;
 	char	*str2;
 
-	str1 = "abcsadefdsf";
-	str2 = "adef";
-	printf("%s\n", ft_strnstr(str1, str2, 5));
-	printf("%s\n", strnstr(str1, str2, 7));
+	str1 = "MZIRIBMZIRIBMZE123";
+	str2 = "MZIRIBMZE";
+	printf("%s\n", ft_strnstr(str1, str2, ft_strlen(str2)));
+		printf("%d\n", strnstr(str1, str2, 7));
 } */
