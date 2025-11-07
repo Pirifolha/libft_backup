@@ -6,7 +6,7 @@
 /*   By: misousa <misousa@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 15:58:12 by misousa           #+#    #+#             */
-/*   Updated: 2025/11/05 15:32:42 by misousa          ###   ########.fr       */
+/*   Updated: 2025/11/07 16:40:37 by misousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,15 @@ void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*result;
 
-	if (size == 0 || nmemb == 0)
+	if (size == 0 && nmemb == 0)
 	{
 		result = malloc(1);
 		if (result == 0)
 			return (0);
 		return (result);
 	}
+	if (size == 0 || nmemb == 0)
+		return (0);
 	result = malloc(nmemb * size);
 	if (result == 0)
 		return (0);
