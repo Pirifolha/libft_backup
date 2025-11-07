@@ -6,7 +6,7 @@
 /*   By: misousa <misousa@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 17:54:19 by misousa           #+#    #+#             */
-/*   Updated: 2025/11/07 17:52:32 by misousa          ###   ########.fr       */
+/*   Updated: 2025/11/07 18:41:13 by misousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,8 +128,8 @@ char	**ft_split(char const *s, char c)
 	char **res;
 	int words;
 
-	words = count_words("hello!", ' ');
-	res = ft_split("hello!", ' ');
+	words = count_words("^^^1^^2a,^^^^3^^^^--h^^^^", '^');
+	res = ft_split("^^^1^^2a,^^^^3^^^^--h^^^^", '^');
 
 	printf("%d\n", words);
 	for (int i = 0; i < words; i++)

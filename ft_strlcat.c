@@ -6,13 +6,11 @@
 /*   By: misousa <misousa@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 15:04:13 by misousa           #+#    #+#             */
-/*   Updated: 2025/10/28 13:20:12 by misousa          ###   ########.fr       */
+/*   Updated: 2025/11/07 18:49:53 by misousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-size_t	ft_strlen(const char *s);
 
 size_t	ft_strlcat(char *dst, char *src, size_t size)
 {

@@ -6,13 +6,11 @@
 /*   By: misousa <misousa@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 15:58:12 by misousa           #+#    #+#             */
-/*   Updated: 2025/11/07 16:40:37 by misousa          ###   ########.fr       */
+/*   Updated: 2025/11/07 18:03:36 by misousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-void	*ft_memset(void *s, int c, size_t n);
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miguelsousa <miguelsousa@student.42.fr>    +#+  +:+       +#+        */
+/*   By: misousa <misousa@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 23:30:01 by miguelsousa       #+#    #+#             */
-/*   Updated: 2025/11/06 20:08:29 by miguelsousa      ###   ########.fr       */
+/*   Updated: 2025/11/07 18:36:29 by misousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
