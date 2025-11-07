@@ -3,39 +3,38 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: misousa <misousa@student.42lisboa.com>     +#+  +:+       +#+        */
+/*   By: miguelsousa <miguelsousa@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/22 23:30:01 by miguelsousa       #+#    #+#             */
-/*   Updated: 2025/11/05 17:30:19 by misousa          ###   ########.fr       */
+/*   Updated: 2025/11/06 20:08:29 by miguelsousa      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+void	*ft_memmove(void *dst, const void *src, size_t n)
 {
 	unsigned char		*to;
 	const unsigned char	*from;
 	size_t				i;
 
-	to = (unsigned char *)dest;
+	if (!dst && !src)
+		return (0);
+	to = (unsigned char *)dst;
 	from = (const unsigned char *)src;
 	i = 0;
-	if (!dest && !src)
-		return (0);
 	if (to > from)
-		while (n > 0)
-		{
-			n--;
+		while (n--)
 			to[n] = from[n];
-		}
 	else
+	{
 		while (i < n)
 		{
 			to[i] = from[i];
 			i++;
 		}
-	return (dest);
+	}
+	return (dst);
 }
 
 /* int	main(void)

@@ -6,16 +6,15 @@
 /*   By: miguelsousa <miguelsousa@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 18:47:31 by miguelsousa       #+#    #+#             */
-/*   Updated: 2025/11/04 22:27:38 by miguelsousa      ###   ########.fr       */
+/*   Updated: 2025/11/06 18:25:57 by miguelsousa      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	unsigned int i;
+	unsigned int	i;
 
 	i = 0;
-
 	while (s[i] != '\0')
 	{
 		f(i, &s[i]);

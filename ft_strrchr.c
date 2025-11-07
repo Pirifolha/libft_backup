@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: misousa <misousa@student.42lisboa.com>     +#+  +:+       +#+        */
+/*   By: miguelsousa <miguelsousa@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/23 15:32:14 by miguelsousa       #+#    #+#             */
-/*   Updated: 2025/11/05 18:23:20 by misousa          ###   ########.fr       */
+/*   Updated: 2025/11/06 20:15:19 by miguelsousa      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,22 +16,24 @@ char	*ft_strrchr(const char *s, int c)
 {
 	int	i;
 
-	i = ft_strlen(s) - 1;
+	i = ft_strlen(s);
 	if (!s)
 		return (0);
-	while (s[i] != c && i >= 0)
+	while (i >= 0)
+	{
+		if (s[i] == (unsigned char)c)
+			return ((char *)s + i);
 		i--;
-	if (s[i] == c)
-		return ((char *)s + i);
+	}
 	return (0);
 }
 
 /* int	main(void)
 {
-	char *str = "\0";
-	int c = 'a';
-	const char *res = ft_strrchr(str, c);
-	const char *res2 = strrchr(str, c);
+	int c = '\0';
+
+	const char *res = ft_strrchr(((void *)0), c);
+	const char *res2 = strrchr(((void *)0), c);
 
 	printf("%s\n", res);
 	printf("%s\n", res2);

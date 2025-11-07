@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: misousa <misousa@student.42lisboa.com>     +#+  +:+       +#+        */
+/*   By: miguelsousa <miguelsousa@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/26 12:13:02 by misousa           #+#    #+#             */
-/*   Updated: 2025/11/05 18:20:46 by misousa          ###   ########.fr       */
+/*   Updated: 2025/11/06 20:46:09 by miguelsousa      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,20 +16,18 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	size_t	i;
 	char	*result;
+	size_t	slen;
 
 	i = 0;
+	slen = ft_strlen(s);
 	if (!s)
 		return (0);
-	if (start >= ft_strlen(s))
-	{
-		result = malloc(1);
-		if (result == 0)
-			return (0);
-		result[start] = '\0';
-		return (result);
-	}
+	if (start >= slen)
+		len = 0;
+	if (len > slen - start)
+		len = slen - start;
 	result = malloc(len + 1);
-	if (result == 0)
+	if (!result)
 		return (0);
 	while (i < len)
 	{
@@ -43,13 +41,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 /* int	main(void)
 {
-	char *s;
 	char *result;
-	int i;
 
-	s = "01234";
-	i = 10;
-	result = ft_substr(s, i, 10);
+	result = ft_substr("abc", 1, 100);
 
 	printf("This is the sub string: %s\n", result);
 	free(result);

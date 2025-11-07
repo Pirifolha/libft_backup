@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: misousa <misousa@student.42lisboa.com>     +#+  +:+       +#+        */
+/*   By: miguelsousa <miguelsousa@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/27 17:54:19 by misousa           #+#    #+#             */
-/*   Updated: 2025/10/30 16:17:46 by misousa          ###   ########.fr       */
+/*   Updated: 2025/11/06 22:35:09 by miguelsousa      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,10 @@ static int	count_words(const char *s, char c)
 	words = 0;
 	while (s[i] != '\0')
 	{
-		if ((s[i] != c && s[i + 1] == c))
+		if ((s[i] != c && (s[i - 1] == c || s[i - 1] == s[0])))
 			words++;
 		i++;
 	}
-	if (s[--i] != c)
-		words++;
 	return (words);
 }
 
@@ -46,7 +44,7 @@ static int	*wordlen(const char *s, char c, int words)
 	{
 		if (s[i] != c)
 			count++;
-		if ((s[i] != c && s[i + 1] == c))
+		if ((s[i] != c && s[i - 1] == c || s[i - 1] == s[0]))
 		{
 			result[words] = count;
 			words++;
@@ -86,6 +84,16 @@ static char	**writestr(char **result, char const *s, char c, int *len)
 	return (result);
 }
 
+static void	free_mem(char **result, int i)
+{
+	while (i > 0)
+	{
+		free(result[i]);
+		i--;
+	}
+	free(result);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	char	**result;
@@ -97,34 +105,36 @@ char	**ft_split(char const *s, char c)
 	words = count_words(s, c);
 	len = wordlen(s, c, words);
 	result = malloc(words * sizeof(char *));
-	if (result == 0)
+	if (result == 0 || !s)
 		return (0);
 	while (i < words)
 	{
 		result[i] = malloc(len[i] + 1 * sizeof(char));
-		if (result == 0)
+		if (result[i] == 0)
+		{
+			free_mem(result, i);
+			free(len);
 			return (0);
+		}
 		i++;
 	}
 	result = writestr(result, s, c, len);
+	free(len);
 	return (result);
 }
 
-/* int	main(void)
+int	main(void)
 {
 	char **res;
-	const char *s;
-	char c;
 	int words;
 
-	s = "\0aa\0bbb";
-	c = '\0';
-	words = count_words(s, c);
-	res = ft_split(s, c);
+	words = count_words("hello!", ' ');
+	res = ft_split("hello!", ' ');
 
+	printf("%d\n", words);
 	for (int i = 0; i < words; i++)
 	{
 		printf("%s\n", res[i]);
 	}
 	free((void *)res);
-} */
+}

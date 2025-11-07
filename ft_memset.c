@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: misousa <misousa@student.42lisboa.com>     +#+  +:+       +#+        */
+/*   By: miguelsousa <miguelsousa@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/21 16:37:07 by misousa           #+#    #+#             */
-/*   Updated: 2025/11/05 17:55:55 by misousa          ###   ########.fr       */
+/*   Updated: 2025/11/06 18:23:56 by miguelsousa      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*ft_memset(void *s, int c, size_t n)
 	unsigned char	*nptr;
 
 	i = 0;
-	nptr = (unsigned char*)s;
+	nptr = (unsigned char *)s;
 	while (i < n)
 	{
 		nptr[i] = (unsigned char)c;
