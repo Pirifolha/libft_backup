@@ -6,7 +6,7 @@
 /*   By: misousa <misousa@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/24 14:55:03 by misousa           #+#    #+#             */
-/*   Updated: 2025/10/28 13:32:41 by misousa          ###   ########.fr       */
+/*   Updated: 2025/11/11 18:04:46 by misousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,5 @@ int	ft_atoi(const char *nptr)
 /* int	main(void)
 {
 	printf("%d\n", ft_atoi("   -2+211asd34asd"));
+	return(0);
 } */

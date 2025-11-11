@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miguelsousa <miguelsousa@student.42.fr>    +#+  +:+       +#+        */
+/*   By: misousa <misousa@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/04 17:09:12 by miguelsousa       #+#    #+#             */
-/*   Updated: 2025/11/04 17:15:34 by miguelsousa      ###   ########.fr       */
+/*   Updated: 2025/11/11 17:44:57 by misousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ void	ft_putstr_fd(char *s, int fd)
 	int	i;
 
 	i = 0;
+	if (!s)
+		return ((void)0);
 	while (s[i] != '\0')
 	{
 		write(fd, &s[i], 1);
@@ -24,8 +26,7 @@ void	ft_putstr_fd(char *s, int fd)
 	}
 }
 
-/* int main ()
+int	main(void)
 {
-
-	ft_putstr_fd("asdasdasd", 2);
-} */
+	ft_putstr_fd(NULL, 2);
+}

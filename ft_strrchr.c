@@ -3,15 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miguelsousa <miguelsousa@student.42.fr>    +#+  +:+       +#+        */
+/*   By: misousa <misousa@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/23 15:32:14 by miguelsousa       #+#    #+#             */
-/*   Updated: 2025/11/06 20:15:19 by miguelsousa      ###   ########.fr       */
+/*   Updated: 2025/11/11 18:18:52 by misousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
+/// @brief 
+/// @param s 
+/// @param c 
+/// @return 
 char	*ft_strrchr(const char *s, int c)
 {
 	int	i;

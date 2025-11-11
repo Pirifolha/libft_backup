@@ -6,7 +6,7 @@
 /*   By: misousa <misousa@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/26 11:08:02 by misousa           #+#    #+#             */
-/*   Updated: 2025/10/28 13:09:58 by misousa          ###   ########.fr       */
+/*   Updated: 2025/11/11 18:02:46 by misousa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,24 +51,24 @@ char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*result;
 
+	if (!s1 || !s2)
+		return (NULL);
 	result = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
-	if (result == 0)
-		return (0);
+	if (!result)
+		return (NULL);
 	result = ft_strcpy(result, s1);
 	result = ft_strcat(result, s2);
 	return (result);
 }
 
-/* int	main(void)
+int	main(void)
 {
-	char *s1;
 	char *s2;
 	char *result;
 
-	s1 = "abfd21c";
 	s2 = "def134g";
-	result = ft_strjoin(s1, s2);
+	result = ft_strjoin(NULL, s2);
 
 	printf("%s\n", result);
 	free(result);
-} */
+}
